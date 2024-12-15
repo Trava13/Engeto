@@ -45,7 +45,7 @@ user_pass = input("Password: ")
 #Check username and password
 if user_name in reg_user and reg_user[user_name] == user_pass:
     print("----------------------------------------")
-    print("Welcome to the app,", user_name)
+    print(f"Welcome to the app, {user_name}")
     print("We have 3 texts to be analyzed.")
     print("----------------------------------------")
     #Selecting text
@@ -54,7 +54,7 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
     #Defination function for counting
     def counting():
         #Counting words
-        word = TEXTS[num_select-1].split()
+        word = TEXTS[num_select - 1].split()
         word_count = len(word)
         print(f"There are {word_count} in the selected text." )
         #Counting titlecase
@@ -65,25 +65,25 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
         print(f"There are {number_tittles} titlecase words")
         #Counting Upercase words
         number_upper = 0
-        for word in TEXTS[num_select-1].split():
+        for word in TEXTS[num_select - 1].split():
             if word.isupper() and  word.isalpha():
                 number_upper += 1
         print(f"There are {number_upper} uppercase words")
         #Conunticn lowercase words
         number_lower = 0
-        for word in TEXTS[num_select-1].split():
+        for word in TEXTS[num_select - 1].split():
             if word.islower():
                 number_lower += 1
         print(f"There are {number_lower} uppercase words")
         #Counting numeric strings
         number_numeric = 0
-        for word in TEXTS[num_select-1].split():
+        for word in TEXTS[num_select - 1].split():
             if word.isnumeric():
                 number_numeric += 1
         print(f"There are {number_numeric} uppercase words")
         #Sum of all number in text
         list_words = []
-        for word in TEXTS[num_select-1].split():
+        for word in TEXTS[num_select - 1].split():
             if word.isnumeric():
                 int_word = int(word)
                 list_words.append(int_word)
@@ -91,7 +91,16 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
         print(f"The sum of all the numers {sum_numbers}")
         print("----------------------------------------")
         #Counting words lenth a occurences
-
+        print("LEN|{:^16}|NR.".format("OCCURENCYS"))
+        print("----------------------------------------")
+        words_lenth = []
+        for word in TEXTS[num_select-1].split(): 
+            word_lenth = len(word)
+            words_lenth.append(word_lenth)
+        max_occu = max(words_lenth)
+        for i in range(1, max_occu+1):
+            count_ocu = words_lenth.count(i)
+            print("{:>3}".format(i),"|{:<16}|".format("*" * count_ocu), count_ocu, sep="")
     #Function for chosing text
     if num_select.isdigit():
         num_select = int(num_select)
