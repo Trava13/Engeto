@@ -46,15 +46,26 @@ user_pass = input("Password: ")
 if user_name in reg_user and reg_user[user_name] == user_pass:
     print("Welcome to the app,", user_name)
     print("We have 3 texts to be analyzed.")
-    num_select = int(input("Enter a number btw. 1 and 3 to select:"))
-    
-    if num_select is 1:
-        print(TEXTS[num_select-1])
-    elif num_select is 2:
-        print(TEXTS[num_select-1])
-    elif num_select is 3:
-        print(TEXTS[num_select-1])
-    else:
+#Selecting text
+    num_select = input("Enter a number btw. 1 and 3 to select:")
+#Defination function for counting
+    def counting():
+        word = TEXTS[num_select-1].split()
+        word_count = len(word)
+        print(f"There are {word_count} in the selected text." )
+        word_titlecase = 
+#Function for chosing text
+    if num_select.isdigit():
+        num_select = int(num_select)
+        if num_select == 1: 
+            counting()
+        elif num_select == 2:
+            counting()
+        elif num_select == 3:
+            counting()
+        else:
             print("Wrong number!")
+    else:
+        print("Not a number, terminating the program..")
 else:
     print("unregistered user, terminating the program..")
