@@ -98,8 +98,7 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
             if word.isalnum():
                 word_alpha.append(word)
         words_lenth = []
-        for word in word_alpha:  
-            print(word)      
+        for word in word_alpha:     
             word_lenth= len(word)
             words_lenth.append(word_lenth)
         max_occu = max(words_lenth)
