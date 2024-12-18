@@ -51,7 +51,7 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
     #Selecting text
     num_select = input("Enter a number btw. 1 and 3 to select: ")
     print("----------------------------------------")
-    #Defination function for counting
+    #Definition function for counting
     def counting():
         #Counting words
         word = TEXTS[num_select - 1].split()
@@ -93,9 +93,14 @@ if user_name in reg_user and reg_user[user_name] == user_pass:
         #Counting words lenth a occurences
         print("LEN|{:^16}|NR.".format("OCCURENCYS"))
         print("----------------------------------------")
+        word_alpha = []
+        for word in TEXTS[num_select-1].split():
+            if word.isalnum():
+                word_alpha.append(word)
         words_lenth = []
-        for word in TEXTS[num_select-1].split(): 
-            word_lenth = len(word)
+        for word in word_alpha:  
+            print(word)      
+            word_lenth= len(word)
             words_lenth.append(word_lenth)
         max_occu = max(words_lenth)
         for i in range(1, max_occu+1):
