@@ -34,3 +34,4 @@ max_occu = max(words_lenth)
 for i in range(1, max_occu+1):
     count_ocu = words_lenth.count(i)
     print("{:>2}".format(i),"|{:<14}|".format("*" * count_ocu), count_ocu, sep="")
+
