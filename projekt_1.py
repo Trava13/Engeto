@@ -61,12 +61,11 @@ if reg_user.get(user_name) == user_pass:
             number_lower = 0
             number_numeric = 0
             list_words = []
-            words_lenth = []     
-            #Counting words
-            word = TEXTS[num_select - 1].split()
-            word_count = len(word)
+            words_lenth = [] 
             #Format text
             for word in TEXTS[num_select-1].split():
+                #Counting words
+                word_count = len(word)
                 #Counting titlecase
                 if word.istitle():
                     number_tittles += 1
@@ -83,18 +82,19 @@ if reg_user.get(user_name) == user_pass:
                 if word.isnumeric():
                     int_word = int(word)
                     list_words.append(int_word)
-                #Sum outside of if, because wil sum after all numbers will write to list
-                sum_numbers = sum(list_words, 0)
-                #Counting words lenth a occurences
+                #Counting words lenth
                 word_lenth = len(word)
                 words_lenth.append(word_lenth)
-                max_occu = max(words_lenth)
+            #Max occurencie
+            max_occu = max(words_lenth)
+            #Sum outside of if, because wil sum after all numbers will write to list
+            sum_numbers = sum(list_words, 0) 
             #Print resault
-            print(f"There are {word_count} in the selected text." )
+            print(f"There are {word_count} words in the selected text." )
             print(f"There are {number_tittles} titlecase words")
             print(f"There are {number_upper} uppercase words")
-            print(f"There are {number_lower} uppercase words")
-            print(f"There are {number_numeric} uppercase words")
+            print(f"There are {number_lower} lowercase words")
+            print(f"There are {number_numeric} numeric words")
             print(f"The sum of all the numers {sum_numbers}")
             print("----------------------------------------")
             print("LEN|{:^16}|NR.".format("OCCURENCYS"))
