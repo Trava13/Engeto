@@ -5,16 +5,7 @@ author: Jakub Trávníček
 email: jakubtravnicek@hotmail.com
 """
 import random
-print(
-    "Hi there!",
-    "-----------------------------------------------",
-    "I've generated a random 4 digit number for you.",
-    "Let's play a bulls and cows game.",
-    "-----------------------------------------------",
-    "Enter a number:",
-    sep="\n"
-)
-
+#Set functions
 def number_check(number):
     """
     This function verify number are digit, long 4 charachters, not strat with 0 and all for number are uniq
@@ -98,6 +89,16 @@ def change_end_word(number, word):
         return word
     else:
         return word + "s"
+#Wellcome message
+print(
+    "Hi there!",
+    "-----------------------------------------------",
+    "I've generated a random 4 digit number for you.",
+    "Let's play a bulls and cows game.",
+    "-----------------------------------------------",
+    "Enter a number:",
+    sep="\n"
+)
 #Call user input and verify it  
 user_num = use_num()
 #Generate random number and verify it
