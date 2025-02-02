@@ -14,7 +14,7 @@ def number_check(number):
     1234, 2579, and so on
     Incorect input:
     1224 due to duplicit number 2
-    hgfj character ar not digit
+    hgfj character are not digit
     12 to short
     123456 to long
     0254 stra with 0
