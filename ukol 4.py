@@ -1,49 +1,14 @@
-import random
-print(
-    "Hi there!",
-    "-----------------------------------------------",
-    "I've generated a random 4 digit number for you.",
-    "Let's play a bulls and cows game.",
-    "-----------------------------------------------",
-    sep="\n"
-)
+import json
 
-def number_check(number):
-    #This function check if number is corect
-    return number.isdigit() and len(number) == 1
-def ran_number_check(number):
-    #This function check if number is corect
-    number_str = str(number)
-    return  len(set(number_str)) == 1
-def generate_valid_number():
-    while True:
-        random_number = random.randint(1,9 )
-        if ran_number_check(random_number):
-            return random_number
-def use_num():
-    #User number
-    user_num = input("Enter a number: ")
-    print("-----------------------------------------------")
-    #Checking user num
-    while True:
-        if number_check(user_num):
-            break
-        else:
-            print("Invalid input")
+chuckuv_slovnik = {
+    "jmeno": "Chuck Norris",
+    "neuspech": None,
+    "kliky": "vsechny",
+    "konkurence": False,
+    "fanousek": "Łukasz"
+}
 
-
-user_num = use_num()
-while True:
-    ran_number = generate_valid_number()
-    if user_num == str(ran_number):
-        print(
-            "Correct, you've guessed the right nuber",
-            "-----------------------------------------------",
-            "That's amazing",
-            sep="\n"
-        )
-        break
-    else:
-        print(">>> ", ran_number)
-        continue 
-
+# argument 'indent' součástí metody 'dumps'
+# .. použité 4 mezery, ale hodnotu můžeš upravit
+vystup_s_jsonem = json.dumps(chuckuv_slovnik, ensure_ascii=False)
+print(vystup_s_jsonem)

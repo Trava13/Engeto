@@ -1,0 +1,3 @@
+První øádek v souboru,
+druhı øádek v souboru,
+tøetí øádek v souboru.

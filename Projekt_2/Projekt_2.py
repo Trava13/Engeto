@@ -89,34 +89,25 @@ def change_end_word(number, word):
         return word
     else:
         return word + "s"
-#Wellcome message
-print(
-    "Hi there!",
-    "-----------------------------------------------",
-    "I've generated a random 4 digit number for you.",
-    "Let's play a bulls and cows game.",
-    "-----------------------------------------------",
-    "Enter a number:",
-    sep="\n"
-)
-#Call user input and verify it  
-user_num = use_num()
-#Generate random number and verify it
-ran_num = generate_valid_number()
-#Here is torete number fo wrong guesses guesses
-count = 0
-#Function which will repate until you find the random number
-while True:
+def main():
+    #Call user input and verify it  
+    user_num = use_num()
+    #Generate random number and verify it
+    ran_num = generate_valid_number()
+    #Here is torete number fo wrong guesses guesses
+    count = 0
+    #Function which will repate until you find the random number
+    while True:
     #When you number function stop and print the text
-    if user_num == str(ran_num):
-        print(
-            "Correct, you've guessed the right nuber",
-            f"in {count} guesses!",
-            "-----------------------------------------------",
-            "That's amazing",
-            "-----------------------------------------------",
-            sep="\n"
-        )
+        if user_num == str(ran_num):
+            print(
+                "Correct, you've guessed the right nuber",
+                f"in {count} guesses!",
+                "-----------------------------------------------",
+                "That's amazing",
+                "-----------------------------------------------",
+                sep="\n"
+            )
         break 
     else:
         #Here we calling def function which count cows adn bulls
@@ -127,3 +118,15 @@ while True:
         user_num = use_num()
         #For every wrong guesse add 1 to count
         count += 1
+#Wellcome message
+print(
+    "Hi there!",
+    "-----------------------------------------------",
+    "I've generated a random 4 digit number for you.",
+    "Let's play a bulls and cows game.",
+    "-----------------------------------------------",
+    "Enter a number:",
+    sep="\n"
+)
+if __name__ == "__main__":
+    main()
