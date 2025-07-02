@@ -12,3 +12,6 @@ print(cities)
 td_split_number = split_html.find_all("td", {"class": "cislo"})
 numbers =  [td_number.text for td_number in td_split_number]
 print(numbers)
+
+
+#iplemetnovane

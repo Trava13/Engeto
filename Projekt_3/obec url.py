@@ -16,3 +16,6 @@ for td in td_split:
 for p in path:
     odkaz = f"https://www.volby.cz/pls/ps2017nss/{p}"
     print(odkaz)
+
+    
+#ipmplementovano

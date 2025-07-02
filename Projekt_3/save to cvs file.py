@@ -1,13 +1,3 @@
-"""
-projekt_3.py: třetí projekt do Engeto Online Python Akademie
-
-author: Jakub Trávníček
-email: jakubtravnicek@hotmail.com
-"""
-import requests
-from bs4 import BeautifulSoup as bs
-import sys
-
 import requests
 from bs4 import BeautifulSoup as bs
 import sys
@@ -87,7 +77,7 @@ def envelopes(url):
     for url_vil in list_urls:
         html = requests.get(url_vil)
         split_html = bs(html.text, features="html.parser")
-        td_split = split_html.find_all("td", {"headers": "sa2"})
+        td_split = split_html.find_all("td", {"headers": "sa3"})
         voters = []
         for td in td_split:
             voters.append(td.text)
@@ -99,7 +89,7 @@ def valid(url):
     for url_vil in list_urls:
         html = requests.get(url_vil)
         split_html = bs(html.text, features="html.parser")
-        td_split = split_html.find_all("td", {"headers": "sa2"})
+        td_split = split_html.find_all("td", {"headers": "sa6"})
         voters = []
         for td in td_split:
             voters.append(td.text)
@@ -108,12 +98,7 @@ def valid(url):
 def clean_list(fun, url):
     list_voters = fun(url)
     return [space.replace('\xa0', '') for space in list_voters]
-def save_to_csv(data, filename):
-    """Save a list of dictionaries to a CSV file."""
-    with open(filename, mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=data[0].keys())
-        writer.writeheader()
-        writer.writerows(data)
+    
 
 #Main function
 if __name__ == "__main__":
@@ -123,5 +108,8 @@ if __name__ == "__main__":
     url = sys.argv[1]
     html_data = url_check(url)
     dict_to_cv = make_dictonary()
-    csv_file = save_to_csv(dict_to_cv, file.csv)
     print(dict_to_cv)
+
+
+
+    

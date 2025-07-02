@@ -17,6 +17,9 @@ split_html = bs(html.text, features="html.parser")
 td_split = split_html.find_all("td", {"headers": "sa6"})
 votes = [td.text for td in td_split]
 print(votes)
+#------------------------------------------------------------------
+#implementovano
+
 html = get(url)
 split_html = bs(html.text, features="html.parser")
 td_split = split_html.find_all("td", {"headers": "t1sa1 t1sb2"})
