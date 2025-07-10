@@ -1,3 +1,9 @@
+"""
+main.py: třetí projekt do Engeto Online Python Akademie
+
+author: Jakub Trávníček
+email: travnicekjakub@hotmail.com
+"""
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -5,7 +11,7 @@ import sys
 
 class Scraper:
     def __init__(self, url):
-        self.base_url = url #url stránka ve formátu odkazu
+        self.base_url = url #url stránka ve formátu odkazu 
         self.html_text = self.get_html(url) # kód samotné stránky
         self.soup = BeautifulSoup(self.html_text, "html.parser") #vytvoření přehledné stromové struktury
         self.detail = []
@@ -172,18 +178,12 @@ class Scraper:
 
 # Hlavní část programu
 if __name__ == "__main__":
-    """
+
     if len(sys.argv) != 3:
         print("Použití: python main.py <URL> <název_souboru.csv>")
-        sys.exit(1)
+        sys.exit()
 
     input_url = sys.argv[1]
     scraper = Scraper(input_url)
     scraper.scrape()
-    scraper.save_to_csv("vysledky.csv")
-    """
-
-    input_url = "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101"
-    scraper = Scraper(input_url)
-    scraper.scrape()
-    scraper.save_to_csv("vysledky.csv")
+    scraper.save_to_csv(sys.argv[2])
